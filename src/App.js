@@ -20,11 +20,19 @@ export default function App() {
     margin-bottom: 5%;
 
     `;
+    let audio = new Audio("/Rick-and-Morty-Theme-Song.mp3")
+
+    const start = () => {
+      audio.play()
+    }
 
   
   return (
     <StyledMain data-testid='app'>
       < Header/>
+      < div >
+    <button onClick={start}>Play</button>
+    </div >
       <StyledNav>
       <Link to="/">Home</Link>
       <Link to="/Characters">Characters</Link>
@@ -32,6 +40,7 @@ export default function App() {
       <Route exact path="/" component={WelcomePage}/>
       <Route path="/Characters" component={CharacterList}/>
     </StyledMain>
+
   );
 }
 
