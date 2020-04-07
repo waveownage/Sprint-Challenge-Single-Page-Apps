@@ -7,6 +7,9 @@ import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function App() {
+  const StyledMain = styled.main`
+  background-color: #8FBC8F;
+  `
   const StyledNav = styled.nav`
     display:flex;
     justify-content: center;
@@ -15,11 +18,12 @@ export default function App() {
     margin-right:30%;
     font-size: 1.5rem;
     margin-bottom: 5%;
+
     `;
 
   
   return (
-    <main data-testid='app'>
+    <StyledMain data-testid='app'>
       < Header/>
       <StyledNav>
       <Link to="/">Home</Link>
@@ -27,7 +31,7 @@ export default function App() {
       </StyledNav>
       <Route exact path="/" component={WelcomePage}/>
       <Route path="/Characters" component={CharacterList}/>
-    </main>
+    </StyledMain>
   );
 }
 
