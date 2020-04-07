@@ -8,47 +8,44 @@ import styled from "styled-components";
 
 export default function App() {
   const StyledMain = styled.main`
-  background-color: #8FBC8F;
-  `
+    background-color: #8fbc8f;
+  `;
   const StyledNav = styled.nav`
-    display:flex;
+    display: flex;
     justify-content: center;
     justify-content: space-between;
-    margin-left:30%;
-    margin-right:30%;
+    margin-left: 30%;
+    margin-right: 30%;
     font-size: 1.5rem;
     margin-bottom: 5%;
+  `;
+  let audio = new Audio("/Rick-and-Morty-Theme-Song.mp3");
 
-    `;
-    let audio = new Audio("/Rick-and-Morty-Theme-Song.mp3")
+  const start = () => {
+    audio.play();
+  };
 
-    const start = () => {
-      audio.play()
-    }
-
-  
   return (
-    <StyledMain data-testid='app'>
-      < Header/>
-      < div >
-    <button onClick={start}>Play</button>
-    </div >
+    <StyledMain data-testid="app">
+      <Header />
+      <div>
+        <button onClick={start}>Play</button>
+      </div>
       <StyledNav>
-      <Link to="/">Home</Link>
-      <Link to="/Characters">Characters</Link>
+        <Link to="/">Home</Link>
+        <Link to="/Characters">Characters</Link>
       </StyledNav>
-      <Route exact path="/" component={WelcomePage}/>
-      <Route path="/Characters" component={CharacterList}/>
+      <Route exact path="/" component={WelcomePage} />
+      <Route path="/Characters" component={CharacterList} />
     </StyledMain>
-
   );
 }
 
 axios
-    .get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
-    .then(response => {
-      console.log(response);
-    })
-    .catch(err => console.log(err));
-
-
+  .get(
+    `https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`
+  )
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => console.log(err));

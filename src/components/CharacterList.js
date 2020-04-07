@@ -26,7 +26,9 @@ export default function CharacterList() {
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   }, []);
 
-  const filtered = characters.filter((c) => c.name.toLowerCase().indexOf(searchText) > -1);
+  const filtered = characters.filter(
+    c => c.name.toLowerCase().indexOf(searchText) > -1
+  );
   return (
     <section className="character-list">
       <SearchForm
@@ -34,9 +36,13 @@ export default function CharacterList() {
         onSearchUpdate={text => setSearchText(text.toLowerCase())}
       />
       {filtered.map(character => {
-        return <CharacterCard key={character.id} character={character}></CharacterCard>;
+        return (
+          <CharacterCard
+            key={character.id}
+            character={character}
+          ></CharacterCard>
+        );
       })}
     </section>
   );
 }
-
