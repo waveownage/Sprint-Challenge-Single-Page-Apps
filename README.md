@@ -27,6 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
+Client-side routing allows for a one time load of the page. You can switch through the routed pages faster and without refreshing the page. 
+
 > Answer:
 
 ## Project Set Up
